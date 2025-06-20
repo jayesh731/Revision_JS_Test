@@ -7,7 +7,6 @@ export class TaskManager {
   }
 
   addTask(text) {
-    console.log(text);
     this.tasks.push({ id: Date.now(), text, completed: false });
     console.log(this.tasks);
     this.save();
@@ -27,11 +26,9 @@ export class TaskManager {
   }
 
   toggleCompletion(id, completed) {
-    console.log(completed)
     this.tasks = this.tasks.map(task =>
       task.id === id ? { ...task, completed } : task
     );
-    console.log(this.tasks)
     this.save();
   }
 

@@ -32,7 +32,6 @@ function success(msg, el) {
 }
 
 function handelSubmit(e) {
-  console.log("callign");
   e.preventDefault();
   const input = inputEl.value;
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
@@ -72,7 +71,6 @@ function displayTask() {
       </div>`;
     li.innerHTML = taskElement;
     taskContainer.appendChild(li);
-    console.log(tasks);
   });
 }
 
@@ -100,11 +98,9 @@ async function fetchApi() {
   loading.textContent = "Loading...";
   fetchContainer.innerHTML = "";
   const id = Math.ceil(Math.random() * 10);
-  console.log(id);
   try {
     const response = await fetch(`https://dummyjson.com/quotes/${id}`);
     const data = await response.json();
-    console.log(data);
     displayQuates(data);
   } catch (error) {
     handelError("Error While Fetching Quates", loading);
