@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprehensive Practice Test</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/990ff5ad1c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 class="text-4xl mt-10 text-center">JavaScript Practice Test</h1>
+    <div class="container p-10 px-15 rounded-xl inset-shadow-sm">
+      <form>
+        <!-- Email -->
+        <h3 class="text-2xl">Email Validation</h3>
+        <div>
+          <div class="mt-2">
+            <div
+              class="flex items-center rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+            >
+              <input
+                type="text"
+                name="price"
+                id="input"
+                class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                placeholder="Enter email"
+              />
+            </div>
+          </div>
+        </div>
+        <span id="error1"></span>
+        <button type="submit" id="emailBtn" class="button">Submit</button>
+      </form>
+
+      <!-- Add task -->
+      <div class="flex flex-col gap-3 mt-8">
+        <h3 class="text-2xl">Add Tasks</h3>
+        <div>
+          <div class="mt-2">
+            <div
+              class="flex items-center rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600"
+            >
+              <input
+                type="text"
+                name="price"
+                id="inputTask"
+                class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                placeholder="Enter task"
+              />
+            </div>
+          </div>
+        </div>
+        <span id="error2"></span>
+        <div id="taskContainer" class="space-y-4"></div>
+        <button id="taskBtn" class="button">Add task</button>
+      </div>
+
+      <!-- Random Quote Fetcher -->
+      <div class="flex flex-col gap-3 mt-8">
+        <h3 class="text-2xl">Random Quote Fetcher</h3>
+        <span id="loading"></span>
+        <div id="fetchContainer" class="space-y-4"></div>
+        <button id="fetchBtn" class="button">Fetch Quote</button>
+      </div>
+
+      <!-- Canvas Drawing -->
+      <h3 class="text-2xl mt-8">Canvas Drawing</h3>
+       <div class="p-10 m-10 flex flex-col items-center border border-[#ccc]">
+        <canvas id="myCanvas" width="200" height="200"></canvas>
+        <button id="toggleBtn" class="button">Toggle Color</button>
+       </div>
+
+       <!-- Timer -->
+        <div class="fixed top-10 right-10 button">
+          <p id="timer" class="text-sm italic"></p>
+        </div>
+    </div>
+    <!-- link js -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
