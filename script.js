@@ -56,13 +56,19 @@ function displayTask() {
         id="${task.id}"
         class="todo flex items-center justify-center max-w-md mx-auto bg-white shadow-md rounded-xl p-3 space-x-4 border border-gray-200"
       >
-        <input type="checkbox" class="mt-1 accent-blue-600 w-5 h-5" ${task.completed ? 'checked' : ''} />
+        <input type="checkbox" class="mt-1 accent-blue-600 w-5 h-5" ${
+          task.completed ? "checked" : ""
+        } />
         <div class="flex-1">
-          <p class="task-text text-sm text-gray-500 ${task.completed ? 'line-through' : ''}">
+          <p class="task-text text-sm text-gray-500 ${
+            task.completed ? "line-through" : ""
+          }">
             ${task.text}
           </p>
         </div>
-        <button class="edit text-blue-600 hover:text-blue-800 transition-colors ${task.completed ? 'hidden' : ''}">
+        <button class="edit text-blue-600 hover:text-blue-800 transition-colors ${
+          task.completed ? "hidden" : ""
+        }">
           <i class="fa-solid fa-pen-to-square" ></i>
         </button>
         <button class="delete text-gray-400 hover:text-red-500 transition duration-200">
@@ -137,14 +143,9 @@ taskContainer.addEventListener("click", (e) => {
   const id = Number(todoDiv.id);
 
   if (e.target.closest('input[type="checkbox"]')) {
-    const todoDiv = e.target.closest(".todo");
     const checkbox = e.target;
-    const taskText = todoDiv.querySelector(".task-text");
-    const editBtn = todoDiv.querySelector(".edit");
     taskManager.toggleCompletion(id, checkbox.checked);
-    taskText.classList.toggle("line-through", checkbox.checked);
-    editBtn.classList.toggle("hidden", checkbox.checked);
-
+    displayTask();
   } else if (e.target.closest(".delete")) {
     taskManager.deleteTask(id);
     displayTask();
